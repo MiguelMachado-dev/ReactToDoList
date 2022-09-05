@@ -11,7 +11,8 @@
     "typecheck": "bash -c tsc --project tsconfig.json --noEmit",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "cz"
   },
   "lint-staged": {
     "src/**/*": [
@@ -29,6 +30,7 @@
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
     "@vitejs/plugin-react": "^2.1.0",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
@@ -41,5 +43,10 @@
     "prettier": "^2.7.1",
     "typescript": "^4.6.4",
     "vite": "^3.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
