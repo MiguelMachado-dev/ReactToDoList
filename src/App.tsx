@@ -10,11 +10,21 @@ function App() {
     { text: 'Build really cool todo app', complete: false },
   ])
 
+  // TODO: Component to render todos
+  // TODO: Mark todo as complete
+  // TODO: filter todos
+
   return (
-    <div className="App">
-      <h2>Hello World!</h2>
+    <div>
+      <h2>React + Vite ToDo List</h2>
 
       <AddTodo setTodos={setTodos} existingTodos={todos} />
+
+      {todos.map((todo, index) => (
+        <div key={index}>
+          <h2>{todo.text}</h2>
+        </div>
+      ))}
     </div>
   )
 }
