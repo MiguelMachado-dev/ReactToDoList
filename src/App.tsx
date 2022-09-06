@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import type { ITodo } from 'types'
 
 import { AddTodo } from 'components/AddTodo'
+
+import type { ITodo } from 'types'
 
 function App() {
   const [todos, setTodos] = useState<Array<ITodo>>([
