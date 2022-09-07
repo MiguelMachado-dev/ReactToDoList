@@ -7,7 +7,7 @@ export const Container = styled.div`
 
 export const Input = styled.input`
   font-weight: 400;
-  font-size: 36px;
+  font-size: 3.6rem;
   line-height: 1.5;
   letter-spacing: 0.1em;
 
