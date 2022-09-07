@@ -1,6 +1,16 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
+
+  @font-face {
+    font-family: 'Monda';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local(''),
+        url('/fonts/monda-v16-latin-regular.woff2') format('woff2');
+  }
+
   :root {
     --background-color: #181824;
     --text-color: #f5f5f5;
@@ -22,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Monda', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     -webkit-font-smoothing: antialiased;
