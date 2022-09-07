@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { GoPlus } from 'react-icons/go'
+
 import type { ITodo } from 'types'
 
 import * as S from './styles'
@@ -23,7 +25,7 @@ const AddTodo = ({ existingTodos, setTodos }: IAddTodoProps) => {
     <S.Container>
       <S.Input
         type="text"
-        placeholder="Add todo"
+        placeholder="Create a new todo..."
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={(e) => {
@@ -37,8 +39,15 @@ const AddTodo = ({ existingTodos, setTodos }: IAddTodoProps) => {
         }}
       />
 
-      <S.Button type="button" onClick={AddTodo} disabled={!inputValue}>
-        Add Todo
+      <S.Button
+        aria-label="Add Todo"
+        type="button"
+        onClick={AddTodo}
+        disabled={!inputValue}
+      >
+        <S.IconWrapper>
+          <GoPlus />
+        </S.IconWrapper>
       </S.Button>
     </S.Container>
   )
