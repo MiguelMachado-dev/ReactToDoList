@@ -8,7 +8,7 @@
 
 > A react + vite + typescript ToDo List project!
 
-### ✨ [Demo](react-vite-todo-list.miguelmachado.dev/)
+### ✨ [Demo](https://react-vite-todo-list.miguelmachado.dev/)
 
 ## Install
 
@@ -20,12 +20,6 @@ yarn install
 
 ```sh
 yarn dev
-```
-
-## Run tests
-
-```sh
-yarn run test
 ```
 
 ## Author
