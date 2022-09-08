@@ -31,7 +31,6 @@ export const Button = styled.button`
   font-size: 1.8rem;
   cursor: pointer;
   transition: filter 0.2s ease-in-out;
-  border-radius: 0.4rem;
   border: none;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;

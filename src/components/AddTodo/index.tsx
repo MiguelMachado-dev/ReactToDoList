@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { GoPlus } from 'react-icons/go'
+import { v4 as uuidv4 } from 'uuid'
 
 import type { ITodo } from 'types'
 
@@ -19,7 +20,7 @@ const AddTodo = ({ existingTodos, setTodos }: IAddTodoProps) => {
     // @@ Guard Clause
     if (!inputValue) return
 
-    const newTodo = { text: inputValue, complete: false }
+    const newTodo = { id: uuidv4(), text: inputValue, isComplete: false }
     setTodos([...existingTodos, newTodo])
 
     setInputValue('')

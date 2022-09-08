@@ -1,29 +1,24 @@
 import { useState } from 'react'
 
 import { AddTodo } from 'components/AddTodo'
+import { Container } from 'components/Container'
 import { ListTodo } from 'components/ListTodo'
 
 import type { ITodo } from 'types'
 
 function App() {
-  const [todos, setTodos] = useState<Array<ITodo>>([
-    { text: 'Learn about React', complete: false },
-    { text: 'Meet friend for lunch', complete: false },
-    { text: 'Build really cool todo app', complete: false },
-  ])
+  const [todos, setTodos] = useState<Array<ITodo>>([])
 
-  // TODO: Component to render todos
-  // TODO: Mark todo as complete
   // TODO: filter todos
 
   return (
-    <div>
+    <Container>
       <h2>React + Vite ToDo List</h2>
 
       <AddTodo setTodos={setTodos} existingTodos={todos} />
 
       <ListTodo setTodos={setTodos} existingTodos={todos} />
-    </div>
+    </Container>
   )
 }
 

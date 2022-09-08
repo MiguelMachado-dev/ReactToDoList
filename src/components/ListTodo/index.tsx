@@ -8,23 +8,35 @@ interface IListTodoProps {
 }
 
 const ListTodo = ({ existingTodos, setTodos }: IListTodoProps) => {
-  const markTodoAsDone = (index: number) => {
-    const newExistingTodos = [...existingTodos]
-    newExistingTodos[index].complete = !newExistingTodos[index].complete
+  const handleToggleTaskCompletion = (id: string) => {
+    if (!existingTodos) return
 
-    setTodos(newExistingTodos)
+    const newTodo = existingTodos.map((todo) =>
+      todo.id === id
+        ? {
+            ...todo,
+            isComplete: !todo.isComplete,
+          }
+        : todo
+    )
+
+    setTodos(newTodo)
+  }
+
+  if (!existingTodos.length) {
+    return null
   }
 
   return (
     <S.List>
-      {existingTodos.map((todo, index) => {
+      {existingTodos.map(({ id, text, isComplete }) => {
         return (
           <S.ListItem
-            key={index}
-            onClick={() => markTodoAsDone(index)}
-            isDone={todo.complete}
+            key={id}
+            onClick={() => handleToggleTaskCompletion(id)}
+            isDone={isComplete}
           >
-            {todo.text}
+            {text}
           </S.ListItem>
         )
       })}
