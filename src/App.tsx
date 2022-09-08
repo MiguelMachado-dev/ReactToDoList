@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import { AddTodo } from 'components/AddTodo'
+import { ListTodo } from 'components/ListTodo'
 
 import type { ITodo } from 'types'
 
@@ -21,11 +22,7 @@ function App() {
 
       <AddTodo setTodos={setTodos} existingTodos={todos} />
 
-      {todos.map((todo, index) => (
-        <div key={index}>
-          <h2>{todo.text}</h2>
-        </div>
-      ))}
+      <ListTodo setTodos={setTodos} existingTodos={todos} />
     </div>
   )
 }

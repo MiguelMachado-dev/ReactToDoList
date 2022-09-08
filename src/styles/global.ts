@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-display: swap;
     src: local(''),
-        url('/fonts/monda-v16-latin-regular.woff2') format('woff2');
+        url('/fonts/monda-v16-latin/monda-v16-latin-regular.woff2') format('woff2');
   }
 
   :root {
