@@ -15,6 +15,10 @@ const AddTodo = ({ existingTodos, setTodos }: IAddTodoProps) => {
   const [inputValue, setInputValue] = useState<string>('')
 
   const AddTodo = () => {
+    // Check if the input is empty and return if it is
+    // @@ Guard Clause
+    if (!inputValue) return
+
     const newTodo = { text: inputValue, complete: false }
     setTodos([...existingTodos, newTodo])
 
