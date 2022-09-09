@@ -17,7 +17,8 @@
       "jsx": true
     },
     "ecmaVersion": "latest",
-    "sourceType": "module"
+    "sourceType": "module",
+    "project": ["./tsconfig.json"]
   },
   "plugins": ["react", "react-hooks", "@typescript-eslint", "import"],
   "rules": {
@@ -45,6 +46,11 @@
             "position": "after"
           },
           {
+            "pattern": "templates/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
             "pattern": "types/**",
             "group": "external",
             "position": "after"
@@ -67,6 +73,23 @@
         ],
         "alphabetize": {
           "order": "asc"
+        }
+      }
+    ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "types": ["boolean"],
+        "format": ["PascalCase"],
+        "prefix": ["is", "should", "has", "can", "did", "will"]
+      },
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true
         }
       }
     ]
