@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import { AddTodo } from 'components/AddTodo'
 import { ListTodo } from 'components/ListTodo'
+import { TodoActions } from 'components/TodoActions'
 
 import { Base } from 'templates/Base'
 
@@ -20,6 +21,8 @@ const Home = () => {
         <AddTodo setTodos={setTodos} existingTodos={todos} />
 
         <ListTodo setTodos={setTodos} existingTodos={todos} />
+
+        <TodoActions setTodos={setTodos} existingTodos={todos} />
       </S.Main>
     </Base>
   )

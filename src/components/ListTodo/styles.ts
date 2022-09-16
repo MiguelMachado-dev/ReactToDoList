@@ -9,7 +9,8 @@ export const List = styled.ul`
   font-size: 2.4rem;
   line-height: 6rem;
   letter-spacing: 0.1em;
-  border-radius: 16px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
 `
 
 type ListItemProps = {
