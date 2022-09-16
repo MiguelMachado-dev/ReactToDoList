@@ -10,12 +10,10 @@ interface ITodoActionsProps {
 const TodoActions = ({ existingTodos, setTodos }: ITodoActionsProps) => {
   const hasTodos: boolean = existingTodos.length > 0
 
-  const handleClearCompleteTodos = (): void => {
-    const completedTodos = existingTodos.filter((todo) => !todo.isComplete)
+  const handleClearCompleteTodos = () => {
+    const filteredTodos = existingTodos.filter((todo) => !todo.isComplete)
 
-    if (!completedTodos.length) return
-
-    setTodos(completedTodos)
+    setTodos(filteredTodos)
   }
 
   if (!hasTodos) return null
