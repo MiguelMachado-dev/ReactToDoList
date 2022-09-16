@@ -1,3 +1,5 @@
+import { GoCheck } from 'react-icons/go'
+
 import { ITodo } from 'types'
 
 import * as S from './styles'
@@ -36,7 +38,10 @@ const ListTodo = ({ existingTodos, setTodos }: IListTodoProps) => {
             onClick={() => handleToggleTaskCompletion(id)}
             isDone={isComplete}
           >
-            {text}
+            <S.CustomRadio isDone={isComplete}>
+              {isComplete && <GoCheck />}
+            </S.CustomRadio>
+            <S.TodoText>{text}</S.TodoText>
           </S.ListItem>
         )
       })}
