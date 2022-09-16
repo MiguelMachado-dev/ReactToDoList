@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { GoPlus } from 'react-icons/go'
 import { v4 as uuidv4 } from 'uuid'
 
+import { setStorageItem } from 'utils/localStorage'
+
 import type { ITodo } from 'types'
 
 import * as S from './styles'
@@ -22,6 +24,7 @@ const AddTodo = ({ existingTodos, setTodos }: IAddTodoProps) => {
 
     const newTodo = { id: uuidv4(), text: inputValue, isComplete: false }
     setTodos([...existingTodos, newTodo])
+    setStorageItem('todos', [...existingTodos, newTodo])
 
     setInputValue('')
   }

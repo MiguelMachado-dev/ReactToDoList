@@ -1,3 +1,5 @@
+import { setStorageItem } from 'utils/localStorage'
+
 import type { ITodo } from 'types'
 
 import * as S from './styles'
@@ -14,6 +16,7 @@ const TodoActions = ({ existingTodos, setTodos }: ITodoActionsProps) => {
     const filteredTodos = existingTodos.filter((todo) => !todo.isComplete)
 
     setTodos(filteredTodos)
+    setStorageItem('todos', filteredTodos)
   }
 
   if (!hasTodos) return null
