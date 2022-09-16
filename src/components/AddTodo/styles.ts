@@ -1,8 +1,14 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Container = styled.div`
   display: flex;
   padding: 2.4rem;
+
+  ${media.lessThan('medium')`
+    padding: 2.4rem 0;
+    margin-top: 1.8rem;
+  `}
 `
 
 export const Input = styled.input`
@@ -23,6 +29,11 @@ export const Input = styled.input`
   &:focus {
     outline: 2px auto rgba(191, 86, 255, 0.79);
   }
+
+  ${media.lessThan('medium')`
+    width: 100%;
+    font-size: 1.6rem;
+  `}
 `
 
 export const Button = styled.button`

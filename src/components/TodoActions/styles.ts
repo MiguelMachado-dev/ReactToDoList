@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Container = styled.div`
   display: flex;
@@ -11,10 +12,18 @@ export const Container = styled.div`
   width: inherit;
   padding: 0.8rem 2.6rem;
   border: 2px solid #ad02fe;
+
+  ${media.lessThan('medium')`
+    padding: 0.8rem 1.4rem;
+  `}
 `
 
 export const Quantity = styled.p`
   font-size: 2.4rem;
+
+  ${media.lessThan('medium')`
+    font-size: 1.6rem;
+  `}
 `
 
 export const Action = styled.button`
@@ -32,4 +41,9 @@ export const Action = styled.button`
   &:hover {
     filter: brightness(0.8);
   }
+
+  ${media.lessThan('medium')`
+    font-size: 1.6rem;
+    padding: 0.4rem 0.8rem;
+  `}
 `

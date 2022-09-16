@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const List = styled.ul`
   max-width: 666px;
@@ -10,6 +11,11 @@ export const List = styled.ul`
   letter-spacing: 0.1em;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+
+  ${media.lessThan('medium')`
+    font-size: 1.6rem;
+    padding: 1.2rem 1.8rem;
+  `}
 `
 
 type ListItemProps = {
@@ -34,6 +40,10 @@ export const ListItem = styled.li<ListItemProps>`
     cursor: pointer;
     filter: brightness(0.8);
   }
+
+  ${media.lessThan('medium')`
+    min-height: 64px;
+  `}
 `
 
 export const TodoText = styled.p`
@@ -57,4 +67,9 @@ export const CustomRadio = styled.div<ListItemProps>`
     isDone
       ? 'linear-gradient(111.35deg, #E600FA 10.12%, rgba(82, 97, 234, 0) 82.22%)'
       : '#25273c'};
+
+  ${media.lessThan('medium')`
+    min-width: 2.8rem;
+    height: 2.8rem;
+  `}
 `
